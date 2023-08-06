@@ -17,7 +17,7 @@ def add():
         try:
             data = request.get_json()
             print(data)
-            add=float(data['first'])+float(data['second'])
+            add=int(data['first'])+int(data['second'])
             response={'result':add}
             return jsonify(response), 200
         except:
@@ -29,7 +29,7 @@ def subtract():
     try:
         data = request.get_json()
         print(data)
-        sub=float(data['first'])-float(data['second'])
+        sub=int(data['first'])-int(data['second'])
         response={'result':sub}
         return jsonify(response), 200
     except:
