@@ -1,5 +1,3 @@
-from __future__ import division
-import requests
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -11,10 +9,8 @@ def greeting():
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
-    data = request.get_json()
-    add=data['first']+data['second']
-    response={"result" : add}
-    return jsonify(response)
+    dic = request.get_json()
+    return jsonify({"result": dic['first']+dic['second']})
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
